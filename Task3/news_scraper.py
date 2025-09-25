@@ -1,4 +1,4 @@
-# Make sure to install BeautifulSoup: pip install beautifulsoup4
+
 from bs4 import BeautifulSoup
 
 import requests
