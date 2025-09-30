@@ -1,0 +1,85 @@
+<!-- index.html -->
+<!-- Main HTML template for the portfolio -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Rishikesh Brahma</title>
+    
+    <!-- Tailwind CSS for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Link to your custom CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <div class="container mx-auto max-w-4xl p-6 md:p-12">
+
+        <!-- Header & Introduction Section -->
+        <header class="flex flex-col md:flex-row items-center mb-12">
+            <
+            
+            <div>
+                <h1 class="text-4xl md:text-5xl font-bold text-slate-900">Rishihkesh Brahma</h1>
+                <p class="text-xl text-sky-700 font-medium mt-1">Full-Stack Python Developer</p>
+                <p class="text-slate-600 mt-4">
+                    Passionate developer with a knack for creating elegant and efficient web solutions. I specialize in backend development with Python and Flask, and I love bringing ideas to life from concept to deployment.
+                </p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Projects Section -->
+            <section id="projects" class="mb-12">
+                <h2 class="text-3xl font-bold border-b-2 border-sky-200 pb-2 mb-6">My Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Loop through projects passed from Flask -->
+                    {% for project in projects %}
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 border border-slate-200">
+                        <h3 class="font-bold text-xl mb-2 text-sky-800">{{ project.title }}</h3>
+                        <p class="text-slate-600 mb-4">{{ project.description }}</p>
+                        <div class="flex flex-wrap gap-2">
+                           {% for tag in project.tags %}
+                            <span class="bg-sky-100 text-sky-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">{{ tag }}</span>
+                           {% endfor %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </section>
+            
+            <!-- Skills Section -->
+            <section id="skills" class="mb-12">
+                <h2 class="text-3xl font-bold border-b-2 border-sky-200 pb-2 mb-6">Technical Skills</h2>
+                 <div class="flex flex-wrap gap-3">
+                    <span class="skill-badge">Python</span>
+                    <span class="skill-badge">Flask</span>
+                    <span class="skill-badge">Django</span>
+                    <span class="skill-badge">JavaScript</span>
+                    <span class="skill-badge">HTML5</span>
+                    <span class="skill-badge">CSS3 & Tailwind</span>
+                    <span class="skill-badge">SQL & PostgreSQL</span>
+                    <span class="skill-badge">REST APIs</span>
+                    <span class="skill-badge">Git & GitHub</span>
+                    <span class="skill-badge">Docker</span>
+                </div>
+            </section>
+
+           
+        <!-- Footer -->
+        <footer class="text-center text-slate-500 mt-16">
+            <p>&copy; 2025 Rishikesh Brahma. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>

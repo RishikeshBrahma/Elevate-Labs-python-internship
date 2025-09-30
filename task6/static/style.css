@@ -1,0 +1,22 @@
+/* style.css */
+/* Custom styles to complement Tailwind CSS */
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Custom style for skill badges */
+.skill-badge {
+    background-color: #e0f2fe; /* light sky color */
+    color: #0c4a6e; /* dark sky color */
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px; /* pill shape */
+    transition: all 0.2s ease-in-out;
+}
+
+.skill-badge:hover {
+    background-color: #bae6fd; /* a slightly darker sky */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
